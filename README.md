@@ -19,7 +19,7 @@
 | **Android框架**          | [查看](https://github.com/lihaimings/AndroidKnowledgeArticles/tree/main/Android%E6%A1%86%E6%9E%B6)                |
 | **性能优化**             | [查看](https://github.com/lihaimings/AndroidKnowledgeArticles/tree/main/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96)                   |
 | **Android系统理解**      | [查看](https://github.com/lihaimings/AndroidKnowledgeArticles/tree/main/Android%E7%B3%BB%E7%BB%9F%E7%90%86%E8%A7%A3)            |
-| - 系统启动进程           | [查看](#https://github.com/lihaimings/AndroidKnowledgeArticles/tree/main/Android%E7%B3%BB%E7%BB%9F%E7%90%86%E8%A7%A3/%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E8%BF%9B%E7%A8%8B)               |
+| - 系统启动进程           | [查看](https://github.com/lihaimings/AndroidKnowledgeArticles/tree/main/Android%E7%B3%BB%E7%BB%9F%E7%90%86%E8%A7%A3/%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E8%BF%9B%E7%A8%8B)               |
 | - 系统服务               | [查看](https://github.com/lihaimings/AndroidKnowledgeArticles/tree/main/Android%E7%B3%BB%E7%BB%9F%E7%90%86%E8%A7%A3/%E7%B3%BB%E7%BB%9F%E6%9C%8D%E5%8A%A1)                   |
 | - 四大组件               | [查看](https://github.com/lihaimings/AndroidKnowledgeArticles/tree/main/Android%E7%B3%BB%E7%BB%9F%E7%90%86%E8%A7%A3/%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6)                   |
 | - UI体系                 | [查看](https://github.com/lihaimings/AndroidKnowledgeArticles/tree/main/Android%E7%B3%BB%E7%BB%9F%E7%90%86%E8%A7%A3/UI%E4%BD%93%E7%B3%BB)                     |
@@ -32,24 +32,24 @@
 这一部分包含 Java 开发中的基础知识，包括**集合、线程与锁、JVM、泛型注解反射**。
 
 ### 🔹 集合
-- 📄 [HashMap源码](https://github.com/lihaimings/AndroidKnowledgeArticles/blob/main/Java/%E9%9B%86%E5%90%88/HashMap%E6%BA%90%E7%A0%81.md)
+- 📄 [HashMap源码](https://github.com/lihaimings/AndroidKnowledgeArticles/blob/main/Java%E5%9F%BA%E7%A1%80/%E9%9B%86%E5%90%88/HashMap%E6%BA%90%E7%A0%81.md)
 
 ### 🔹 线程与锁
-- 📄 [线程和进程的区别](https://github.com/lihaimings/AndroidKnowledgeArticles/blob/main/Java/%E7%BA%BF%E7%A8%8B%E4%B8%8E%E9%94%81/%E7%BA%BF%E7%A8%8B%E5%92%8C%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%8C%BA%E5%88%AB.md)
-- 📄 [线程的原子可见可序性](https://github.com/lihaimings/AndroidKnowledgeArticles/blob/main/Java/%E7%BA%BF%E7%A8%8B%E4%B8%8E%E9%94%81/%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%8E%9F%E5%AD%90%E5%8F%AF%E8%A7%81%E5%8F%AF%E5%BA%8F%E6%80%A7.md)
-- 📄 [JAVA的线程池ThreadPoolExecutor](https://github.com/lihaimings/AndroidKnowledgeArticles/blob/main/Java/%E7%BA%BF%E7%A8%8B%E4%B8%8E%E9%94%81/JAVA%E7%9A%84%E7%BA%BF%E7%A8%8B%E6%B1%A0ThreadPoolExecutor.md)
-- 📄 [JAVA的CAS](https://github.com/lihaimings/AndroidKnowledgeArticles/blob/main/Java/%E7%BA%BF%E7%A8%8B%E4%B8%8E%E9%94%81/JAVA%E7%9A%84CAS.md)
+- 📄 [线程和进程的区别](https://github.com/lihaimings/AndroidKnowledgeArticles/blob/main/Java%E5%9F%BA%E7%A1%80/%E7%BA%BF%E7%A8%8B%E4%B8%8E%E9%94%81/%E7%BA%BF%E7%A8%8B%E5%92%8C%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%8C%BA%E5%88%AB.md)
+- 📄 [线程的原子可见可序性](https://github.com/lihaimings/AndroidKnowledgeArticles/blob/main/Java%E5%9F%BA%E7%A1%80/%E7%BA%BF%E7%A8%8B%E4%B8%8E%E9%94%81/%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%8E%9F%E5%AD%90%E5%8F%AF%E8%A7%81%E5%8F%AF%E5%BA%8F%E6%80%A7.md)
+- 📄 [JAVA的线程池ThreadPoolExecutor](https://github.com/lihaimings/AndroidKnowledgeArticles/blob/main/Java%E5%9F%BA%E7%A1%80/%E7%BA%BF%E7%A8%8B%E4%B8%8E%E9%94%81/JAVA%E7%9A%84%E7%BA%BF%E7%A8%8B%E6%B1%A0ThreadPoolExecutor.md)
+- 📄 [JAVA的CAS](https://github.com/lihaimings/AndroidKnowledgeArticles/blob/main/Java%E5%9F%BA%E7%A1%80/%E7%BA%BF%E7%A8%8B%E4%B8%8E%E9%94%81/JAVA%E7%9A%84CAS.md)
 
 
 ### 🔹 JVM
-- 📄 [[JVM入门指南01]内存区域与溢出异常](https://github.com/lihaimings/AndroidKnowledgeArticles/blob/main/Java/JVM/%5BJVM%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%9701%5D%E5%86%85%E5%AD%98%E5%8C%BA%E5%9F%9F%E4%B8%8E%E6%BA%A2%E5%87%BA%E5%BC%82%E5%B8%B8.md)
-- 📄 [[JVM入门指南02]GC垃圾回收机制](https://github.com/lihaimings/AndroidKnowledgeArticles/blob/main/Java/JVM/%5BJVM%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%9702%5DGC%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6.md)
-- 📄 [[JVM入门指南03]类加载和Android虚拟机](https://github.com/lihaimings/AndroidKnowledgeArticles/blob/main/Java/JVM/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%92%8CAndroid%E8%99%9A%E6%8B%9F%E6%9C%BA.md)
+- 📄 [[JVM入门指南01]内存区域与溢出异常](https://github.com/lihaimings/AndroidKnowledgeArticles/blob/main/Java%E5%9F%BA%E7%A1%80/JVM/%5BJVM%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%9701%5D%E5%86%85%E5%AD%98%E5%8C%BA%E5%9F%9F%E4%B8%8E%E6%BA%A2%E5%87%BA%E5%BC%82%E5%B8%B8.md)
+- 📄 [[JVM入门指南02]GC垃圾回收机制](https://github.com/lihaimings/AndroidKnowledgeArticles/blob/main/Java%E5%9F%BA%E7%A1%80/JVM/%5BJVM%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%9702%5DGC%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6.md)
+- 📄 [[JVM入门指南03]类加载和Android虚拟机](https://github.com/lihaimings/AndroidKnowledgeArticles/blob/main/Java%E5%9F%BA%E7%A1%80/JVM/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%92%8CAndroid%E8%99%9A%E6%8B%9F%E6%9C%BA.md)
 
 ### 🔹 泛型注解反射
-- 📄 [Java和Kotlin泛型](https://github.com/lihaimings/AndroidKnowledgeArticles/blob/main/Java/%E6%B3%9B%E5%9E%8B%E6%B3%A8%E8%A7%A3%E5%8F%8D%E5%B0%84/Java%E5%92%8CKotlin%E6%B3%9B%E5%9E%8B.md)
-- 📄 [Java的注解](https://github.com/lihaimings/AndroidKnowledgeArticles/blob/main/Java/%E6%B3%9B%E5%9E%8B%E6%B3%A8%E8%A7%A3%E5%8F%8D%E5%B0%84/Java%E7%9A%84%E6%B3%A8%E8%A7%A3.md)
-- 📄 [Java的反射](https://github.com/lihaimings/AndroidKnowledgeArticles/blob/main/Java/%E6%B3%9B%E5%9E%8B%E6%B3%A8%E8%A7%A3%E5%8F%8D%E5%B0%84/Java%E7%9A%84%E5%8F%8D%E5%B0%84.md)
+- 📄 [Java和Kotlin泛型](https://github.com/lihaimings/AndroidKnowledgeArticles/blob/main/Java%E5%9F%BA%E7%A1%80/%E6%B3%9B%E5%9E%8B%E6%B3%A8%E8%A7%A3%E5%8F%8D%E5%B0%84/Java%E5%92%8CKotlin%E6%B3%9B%E5%9E%8B.md)
+- 📄 [Java的注解](https://github.com/lihaimings/AndroidKnowledgeArticles/blob/main/Java%E5%9F%BA%E7%A1%80/%E6%B3%9B%E5%9E%8B%E6%B3%A8%E8%A7%A3%E5%8F%8D%E5%B0%84/Java%E7%9A%84%E6%B3%A8%E8%A7%A3.md)
+- 📄 [Java的反射](https://github.com/lihaimings/AndroidKnowledgeArticles/blob/main/Java%E5%9F%BA%E7%A1%80/%E6%B3%9B%E5%9E%8B%E6%B3%A8%E8%A7%A3%E5%8F%8D%E5%B0%84/Java%E7%9A%84%E5%8F%8D%E5%B0%84.md)
 
 ---
 
