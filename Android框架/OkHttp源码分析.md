@@ -30,7 +30,7 @@ implementation 'com.squareup.okhttp3:okhttp:3.14.5'
         });
 
   ```
-###先看看OkHttp最要的类之一RealCall
+### 先看看OkHttp最要的类之一RealCall
   ```
 #RealCall类
 
@@ -144,7 +144,7 @@ public Builder() {
 }
 }
   ```
-###2.建立Request（http报文）
+### 2.建立Request（http报文）
 Request：包括：**请求地址url,请求方法method，请求头head，请求数据requestBody,标志位tag**
   ```
 Request request = new Request.Builder().url("url").build();
@@ -221,7 +221,7 @@ public Builder method(String method, RequestBody body) {
 }
   ```
 
-###Dispatcher线程池介绍
+### Dispatcher线程池介绍
   ```
 public final class Dispatcher {
   private int maxRequests = 64;
@@ -268,7 +268,7 @@ synchronized void finished(Call call) {
   }
   ```
 
-###核心重点拦截器方法得到响应
+### 核心重点拦截器方法得到响应
 getResponseWithInterceptorChain()：
 **文字总结拦截器的作用：**拦截器可以通过Chain参数拿到上一个的拦截器的request，并通过执行Chain接口的proceed(request)把request传给下一个拦截器并从一个拦截器中拿到response。这是一种责任链的设计模式。
   ```
@@ -307,7 +307,7 @@ public final class RealInterceptorChain implements Interceptor.Chain {
 }
 }
   ```
-###重试拦截器：RetryAndFollowUpInterceptor
+### 重试拦截器：RetryAndFollowUpInterceptor
 **文字总结：**处理重试的拦截器，会处理一些异常，如果这个异常不是致命的则从返回一个request给下级，如果是致命的则将错误给上级。
 再重新生成request时会对状态码进行检查，比如重定向的307，就会从返回的响应中获取新的路径，生成一个新的request给下级重新发起一次请求，如果得到的request为null则返回现在的response给上级。
   ```
@@ -396,7 +396,7 @@ public RetryAndFollowUpInterceptor(OkHttpClient client) {
 
 }
   ```
-###桥接拦截器：BridgeInterceptor
+### 桥接拦截器：BridgeInterceptor
 **文字总结：**给请求头部做一些通用的设置，判断返回的response是否用到压缩并把它变成GzipSource，和保存cookie。
   ```
 public final class BridgeInterceptor implements Interceptor {
@@ -492,7 +492,7 @@ public final class BridgeInterceptor implements Interceptor {
   }
 }
   ```
-###缓存拦截器：CacheInterceptor
+### 缓存拦截器：CacheInterceptor
 **文字总结：**缓存拦截器会根据请求的request和拿到的缓存生成一个缓存策略，缓存策略有需要请求的request和缓存response，根据缓存策略的request和response是否为空进行下一步的操作，比如两个都为null就返回504，request为Null则直接返回本地缓存，根据下级返回的response查看是否状态码是否为304。
 在缓存可用的情况下，读取本地的缓存的数据，如果没有直接去服务器，如果有首先判断有没有缓存策略，然后判断有没有过期，如果没有过期直接拿缓存，如果过期了需要添加一些之前头部信息如：If-Modified-Since ，这个时候后台有可能会给你返回 304 代表你还是可以拿本地缓存，每次读取到新的响应后做一次缓存。
 
@@ -600,7 +600,7 @@ initContentStream()).
   }
 }
   ```
-###连接拦截器：ConnectInterceptor
+### 连接拦截器：ConnectInterceptor
 **文字总结：**
 
 findHealthyConnection() 找一个连接，首先判断有没有健康的，没有就创建（建立Scoket,握手连接），连接缓存。
@@ -627,7 +627,7 @@ public final class ConnectInterceptor implements Interceptor {
   }
 }
   ```
-###CallServerInterceptor
+### CallServerInterceptor
 文字总结：写数据和读取数据
 写头部信息，写body表单信息等等
   ```
@@ -748,7 +748,7 @@ public final class CallServerInterceptor implements Interceptor {
 }
   ```
 **拦截器总结：**首先调用retry拦截它可以在传给下级request得到response的过程中对一些非致命的异常进行再一次的请求，对于下级返回的response对状态码进行判断做再次的请求或者给上一级，对于一些致命异常也是返回给上一级。第二个是BridgeInterceptor拦截器，它会对请求的首部做一些通用的设置，并对返回的response进行是否需要压缩的判断返回gzip和保存response的cookie。第三个是cache缓存拦截，会根据请求拿到本地的缓存，并根据请求和本地缓存拿到生成的缓存策略，根据缓存策略的request和response判断是直接返回缓存，还是继续请求，并根据返回的response判断状态码是否继续返回本地缓存。第四connect连接拦截器主要是与服务器建立TCL的握手连接，这里的连接会使用多路复用，就是没有断开连接之前可以有多个请求共享一个连接，端对端是使用socket连接的。第五：CallServer拦截器主要是读写数据。
-###getResponseWithInterceptorChain得到最上级的resonse响应。
+### getResponseWithInterceptorChain得到最上级的resonse响应。
   ```
 Response getResponseWithInterceptorChain() throws IOException {
   // Build a full stack of interceptors.
@@ -788,7 +788,7 @@ Response getResponseWithInterceptorChain() throws IOException {
 }
 ```
 
-###RealConnect类
+### RealConnect类
   ```
 ublic final class RealConnection extends Http2Connection.Listener implements Connection {
   private static final String NPE_THROW_WITH_NULL = "throw with null exception";
@@ -818,13 +818,13 @@ ublic final class RealConnection extends Http2Connection.Listener implements Con
 ![image.png](https://upload-images.jianshu.io/upload_images/7730759-59d42bd05934e7cc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
-##http的相关知识
+## http的相关知识
 HTTP,FTP,DNS,TCP,UDP,IP
 OSI七层协议：**应用层、表示层、会话层、传输层、网络层、数据链路层、物理层**
 五层：**应用层、传输层、网络层、数据链路层、物理层**
 ![image.png](https://upload-images.jianshu.io/upload_images/7730759-74a352e7f09a31fb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-###TCP的三次握手和四次分手
+### TCP的三次握手和四次分手
 **文字总结：**
 三次握手之后才开始发送数据
 客户端先发一条信息给服务端说能听到吗
@@ -837,7 +837,7 @@ OSI七层协议：**应用层、表示层、会话层、传输层、网络层、
 好的
 ![image.png](https://upload-images.jianshu.io/upload_images/7730759-ef7dc1398e8746a2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-###Http报文
+### Http报文
 请求报文(Qequest)：请求头(首部)+空行+请求数据
 响应报文(Response)：响应头(首部)+空行+响应数据
 ###Http首部
@@ -864,19 +864,19 @@ Status Code: 响应的状态码
 **session**:在服务端保存客户端的信息，断开链接时则失效
 **token:**服务端给客户端的一个id身份号码。
 
-###Http缓存
+### Http缓存
 cache-Control(缓存策略)：Public、private、no_cache、max_age、no-store(不缓存)
 Expires(缓存的过期策略)：指名了缓存数据有效的绝对时间，告诉客户端到了这个时间点（比照客户端时间点）后本地缓存就作废了。
 如果缓存过期再去请求服务器时，不一定拿到数据（304）
 
-###Http状态码
+### Http状态码
 1xx: Infomational (信息状态码) ，接收的请求正在处理
 2xx: Succeed(成功)，请求正常处理完毕,如 200，204
 3xx: Redirection(重定向)，需要进行附加操作，一般是没有响应数据返回的，如 304（Not,modified）307
 4xx: Client Error (客户端的错误)，服务器无法处理请求，如 404，405
 5xx: Server Error (服务端的错误)，服务器处理请求出错，如 500，502
 
-###Http和Https的区别
+### Http和Https的区别
 https=http+加密验证
 
 http的缺点：
@@ -888,7 +888,7 @@ TLS/SSL协议：
 加密：对称加密(AES,DES)+非对称加密(RSA,DSA)
 证书：建立连接的速度会被拖慢，TCP 8次握手
 
-###Http1.0和Http2.0的区别
+### Http1.0和Http2.0的区别
 http2.0:
 1.使用二进制传输不是文本
 2.可以多路复用
